@@ -1,0 +1,17 @@
+{
+  "name": "template-forge",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "turbo run dev --filter=@tf/web",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "storybook": "pnpm --filter @tf/storybook dev",
+    "build-storybook": "pnpm --filter @tf/storybook build"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.10",
+    "typescript": "^5.9.3"
+  }
+}

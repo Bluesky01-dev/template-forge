@@ -1,0 +1,11 @@
+node_modules
+.next
+.open-next
+.turbo
+.wrangler
+storybook-static
+dist
+*.log
+.env*
+!.env.example
+.dev.vars

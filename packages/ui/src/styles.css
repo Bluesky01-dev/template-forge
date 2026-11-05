@@ -1,0 +1,26 @@
+/*
+ * @tf/ui theme bridge. Consumers do:
+ *   @import "tailwindcss";
+ *   @import "@tf/ui/styles.css";
+ *   @source "<path-to>/packages";
+ * Values come from --tf-* variables set by @tf/renderer (per site, per section tone).
+ */
+@theme inline {
+  --color-background: var(--tf-background);
+  --color-foreground: var(--tf-foreground);
+  --color-surface: var(--tf-surface);
+  --color-surface-foreground: var(--tf-surface-foreground);
+  --color-primary: var(--tf-primary);
+  --color-primary-foreground: var(--tf-primary-foreground);
+  --color-secondary: var(--tf-secondary);
+  --color-secondary-foreground: var(--tf-secondary-foreground);
+  --color-accent: var(--tf-accent);
+  --color-accent-foreground: var(--tf-accent-foreground);
+  --color-muted: var(--tf-muted);
+  --color-muted-foreground: var(--tf-muted-foreground);
+  --color-border: var(--tf-border);
+  --color-ring: var(--tf-ring);
+  --radius-tf: var(--tf-radius);
+  --font-display: var(--tf-font-display);
+  --font-body: var(--tf-font-body);
+}
