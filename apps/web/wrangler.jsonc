@@ -10,8 +10,7 @@
     {
       "binding": "DB",
       "database_name": "template-forge",
-      // Replace with the id printed by: npx wrangler d1 create template-forge
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "638a3d04-fed2-407b-a20a-49c37c8456c1",
       "migrations_dir": "migrations"
     }
   ],
