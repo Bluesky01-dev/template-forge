@@ -164,4 +164,4 @@ export const SECTION_TYPES = Section.options.map((o) => o.shape.type.value) as S
 /** Variants per section type, derived from the schemas (single source of truth). */
 export const SECTION_VARIANTS = Object.fromEntries(
   Section.options.map((o) => [o.shape.type.value, o.shape.variant.unwrap().options]),
-) as { [K in SectionType]: ReadonlyArray<SectionOf<K>["variant"]> };
+) as unknown as { [K in SectionType]: ReadonlyArray<SectionOf<K>["variant"]> };
