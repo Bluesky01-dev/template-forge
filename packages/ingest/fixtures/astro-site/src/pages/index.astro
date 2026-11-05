@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+const year = new Date().getFullYear();
+---
+<Layout>
+  <nav><a href="/work">Work</a><a href="/about">About</a><a href="/contact">Contact</a></nav>
+  <h1>Interiors with a quiet kind of luxury</h1>
+  <p>An architecture and interior studio based in Lisbon.</p>
+  <a href="/work" class="btn">View projects</a>
+  <h2>Selected projects</h2>
+  <h3>Casa Alfama</h3><p>A restored 1920s townhouse.</p><img src="/a.jpg" alt="Casa Alfama" />
+  <h3>Atelier Rua</h3><p>A light-filled workspace for makers.</p><img src="/b.jpg" alt="Atelier Rua" />
+  <h2>Start your project</h2>
+  <a href="/contact">Get in touch</a>
+  <footer><p>Studio Lume · Lisbon</p></footer>
+</Layout>
+<style>
+  :root { --color-primary: #8a6a4f; --color-accent: #2f4f4f; }
+  body { background: #f6f1ea; color: #1c1917; font-family: "DM Sans", sans-serif; }
+  h1, h2 { font-family: "Cormorant Garamond", serif; }
+</style>

@@ -1,0 +1,23 @@
+{
+  "name": "@tf/ingest",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "bin": { "tf-ingest": "./src/cli.ts" },
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
+    "@tf/agent": "workspace:*",
+    "@tf/brand": "workspace:*",
+    "@tf/schema": "workspace:*",
+    "@tf/tokens": "workspace:*",
+    "node-html-parser": "^9.0.6",
+    "zod": "^4.0.2"
+  },
+  "devDependencies": { "@types/node": "^22.19.0", "tsx": "^4.23.15", "typescript": "^5.9.3", "vitest": "^4.1.5" }
+}

@@ -1,0 +1,346 @@
+{
+  "manifest": {
+    "id": "carely",
+    "name": "Carely",
+    "description": "Carely — imported template",
+    "source": {
+      "kind": "framer",
+      "url": "fixture: Framer-style Next.js export"
+    },
+    "industries": [
+      "health",
+      "saas",
+      "hospitality",
+      "fintech"
+    ],
+    "mood": {
+      "mode": "light",
+      "styles": [
+        "editorial"
+      ]
+    },
+    "sections": [
+      "navbar",
+      "hero",
+      "features",
+      "stats",
+      "testimonials",
+      "pricing",
+      "faq",
+      "cta",
+      "footer"
+    ],
+    "capacity": {
+      "copy": "light",
+      "images": "few"
+    },
+    "defaultTokens": {
+      "mode": "light",
+      "colors": {
+        "background": "oklch(0.99 0.0049 34.61)",
+        "foreground": "oklch(0.2 0.018 34.61)",
+        "surface": "oklch(0.965 0.012 34.61)",
+        "surface-foreground": "oklch(0.2 0.018 34.61)",
+        "primary": "oklch(0.6861 0.2054 34.61)",
+        "primary-foreground": "oklch(0.18 0.03 34.61)",
+        "secondary": "oklch(0.6861 0.1232 64.61)",
+        "secondary-foreground": "oklch(0.18 0.03 64.61)",
+        "accent": "oklch(0.6861 0.121 214.61)",
+        "accent-foreground": "oklch(0.18 0.03 214.61)",
+        "muted": "oklch(0.93 0.012 34.61)",
+        "muted-foreground": "oklch(0.48 0.012 34.61)",
+        "border": "oklch(0.9 0.012 34.61)",
+        "ring": "oklch(0.6861 0.2054 34.61)"
+      },
+      "radius": "md",
+      "fonts": {
+        "display": {
+          "family": "Fraunces",
+          "google": true,
+          "weights": [
+            400,
+            500,
+            600,
+            700
+          ]
+        },
+        "body": {
+          "family": "Manrope",
+          "google": true,
+          "weights": [
+            400,
+            500,
+            600,
+            700
+          ]
+        }
+      }
+    }
+  },
+  "site": {
+    "version": 1,
+    "id": "carely",
+    "name": "Carely",
+    "templateId": "carely",
+    "meta": {
+      "title": "Carely",
+      "description": ""
+    },
+    "tokens": {
+      "mode": "light",
+      "colors": {
+        "background": "oklch(0.99 0.0049 34.61)",
+        "foreground": "oklch(0.2 0.018 34.61)",
+        "surface": "oklch(0.965 0.012 34.61)",
+        "surface-foreground": "oklch(0.2 0.018 34.61)",
+        "primary": "oklch(0.6861 0.2054 34.61)",
+        "primary-foreground": "oklch(0.18 0.03 34.61)",
+        "secondary": "oklch(0.6861 0.1232 64.61)",
+        "secondary-foreground": "oklch(0.18 0.03 64.61)",
+        "accent": "oklch(0.6861 0.121 214.61)",
+        "accent-foreground": "oklch(0.18 0.03 214.61)",
+        "muted": "oklch(0.93 0.012 34.61)",
+        "muted-foreground": "oklch(0.48 0.012 34.61)",
+        "border": "oklch(0.9 0.012 34.61)",
+        "ring": "oklch(0.6861 0.2054 34.61)"
+      },
+      "radius": "md",
+      "fonts": {
+        "display": {
+          "family": "Fraunces",
+          "google": true,
+          "weights": [
+            400,
+            500,
+            600,
+            700
+          ]
+        },
+        "body": {
+          "family": "Manrope",
+          "google": true,
+          "weights": [
+            400,
+            500,
+            600,
+            700
+          ]
+        }
+      }
+    },
+    "pages": [
+      {
+        "id": "home",
+        "slug": "/",
+        "title": "Home",
+        "sections": [
+          {
+            "id": "nav",
+            "tone": "default",
+            "type": "navbar",
+            "variant": "simple",
+            "props": {
+              "brand": {
+                "name": "Carely"
+              },
+              "links": [
+                {
+                  "label": "Features",
+                  "href": "#features"
+                },
+                {
+                  "label": "Pricing",
+                  "href": "#pricing"
+                },
+                {
+                  "label": "FAQ",
+                  "href": "#faq"
+                }
+              ],
+              "cta": {
+                "label": "Get started",
+                "href": "#"
+              }
+            }
+          },
+          {
+            "id": "hero",
+            "tone": "default",
+            "type": "hero",
+            "variant": "split",
+            "props": {
+              "title": "Modern care, booked in seconds",
+              "subtitle": "Patients book, reschedule and pay online — your front desk finally gets a break.",
+              "primaryCta": {
+                "label": "Book a demo",
+                "href": "/book"
+              },
+              "secondaryCta": {
+                "label": "See how it works",
+                "href": "#how"
+              },
+              "image": {
+                "src": "",
+                "alt": "Clinic dashboard"
+              }
+            }
+          },
+          {
+            "id": "features-1",
+            "tone": "default",
+            "type": "features",
+            "variant": "grid",
+            "props": {
+              "title": "Why clinics switch",
+              "subtitle": "Everything your practice needs in one place.",
+              "items": [
+                {
+                  "title": "Online booking",
+                  "description": "Let patients book 24/7 from any device."
+                },
+                {
+                  "title": "Automated reminders",
+                  "description": "Cut no-shows with SMS and email reminders."
+                },
+                {
+                  "title": "Payments",
+                  "description": "Take deposits and payments at booking."
+                }
+              ]
+            }
+          },
+          {
+            "id": "stats-2",
+            "tone": "surface",
+            "type": "stats",
+            "variant": "row",
+            "props": {
+              "title": "By the numbers",
+              "items": [
+                {
+                  "value": "40%",
+                  "label": "Fewer no-shows"
+                },
+                {
+                  "value": "2,000+",
+                  "label": "Clinics"
+                },
+                {
+                  "value": "4.9/5",
+                  "label": "Average rating"
+                }
+              ]
+            }
+          },
+          {
+            "id": "testimonials-3",
+            "tone": "default",
+            "type": "testimonials",
+            "variant": "grid",
+            "props": {
+              "title": "What our customers say",
+              "items": [
+                {
+                  "quote": "We halved our phone calls in the first month. Patients love it.",
+                  "name": "Dr. Amara Okafor",
+                  "role": "Owner, Northside Physio"
+                },
+                {
+                  "quote": "Set up in an afternoon and the reminders paid for themselves.",
+                  "name": "Liam Chen",
+                  "role": "Practice Manager, Bright Dental"
+                }
+              ]
+            }
+          },
+          {
+            "id": "pricing-4",
+            "tone": "surface",
+            "type": "pricing",
+            "variant": "cards",
+            "props": {
+              "title": "Pricing",
+              "plans": [
+                {
+                  "name": "Solo",
+                  "price": "$29/mo",
+                  "features": [],
+                  "cta": {
+                    "label": "Get started",
+                    "href": "#"
+                  },
+                  "highlighted": false
+                },
+                {
+                  "name": "Clinic",
+                  "price": "$79/mo",
+                  "features": [],
+                  "cta": {
+                    "label": "Get started",
+                    "href": "#"
+                  },
+                  "highlighted": true
+                },
+                {
+                  "name": "Group",
+                  "price": "Custom",
+                  "features": [],
+                  "cta": {
+                    "label": "Get started",
+                    "href": "#"
+                  },
+                  "highlighted": false
+                }
+              ]
+            }
+          },
+          {
+            "id": "faq-5",
+            "tone": "default",
+            "type": "faq",
+            "variant": "accordion",
+            "props": {
+              "title": "FAQ",
+              "items": [
+                {
+                  "question": "Can I import my patients?",
+                  "answer": "Yes, import from a CSV or your current system in minutes."
+                },
+                {
+                  "question": "Is it secure?",
+                  "answer": "Data is encrypted and hosted in your region."
+                }
+              ]
+            }
+          },
+          {
+            "id": "cta-6",
+            "tone": "primary",
+            "type": "cta",
+            "variant": "banner",
+            "props": {
+              "title": "Ready to modernize your clinic?",
+              "primaryCta": {
+                "label": "Start free trial",
+                "href": "/book"
+              }
+            }
+          },
+          {
+            "id": "footer",
+            "tone": "default",
+            "type": "footer",
+            "variant": "simple",
+            "props": {
+              "brand": {
+                "name": "Carely",
+                "tagline": "Carely — booking software for modern clinics."
+              },
+              "columns": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

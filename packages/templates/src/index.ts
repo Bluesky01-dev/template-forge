@@ -2,6 +2,7 @@ import { SiteDoc, TemplateManifest, type SiteDoc as SiteDocT } from "@tf/schema"
 import * as aurora from "./aurora";
 import * as noir from "./noir";
 import * as harvest from "./harvest";
+import { ingested } from "./ingested";
 
 export interface LibraryTemplate {
   manifest: TemplateManifest;
@@ -9,7 +10,7 @@ export interface LibraryTemplate {
 }
 
 /** All library templates, validated at import time so a bad template fails the build. */
-export const templates: LibraryTemplate[] = [aurora, noir, harvest].map((t) => ({
+export const templates: LibraryTemplate[] = [aurora, noir, harvest, ...ingested].map((t) => ({
   manifest: TemplateManifest.parse(t.manifest),
   doc: SiteDoc.parse(t.site),
 }));

@@ -32,3 +32,4 @@ type Story = StoryObj<Args>;
 export const Aurora: Story = { args: { templateId: "aurora" } };
 export const Noir: Story = { args: { templateId: "noir" } };
 export const Harvest: Story = { args: { templateId: "harvest" } };
+export const Carely: Story = { name: "Carely (imported)", args: { templateId: "carely" } };
