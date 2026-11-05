@@ -40,6 +40,28 @@ importers:
         specifier: ^4.1.5
         version: 4.1.12(vite@8.3.5)
 
+  packages/engine:
+    dependencies:
+      '@tf/brand':
+        specifier: workspace:*
+        version: link:../brand
+      '@tf/schema':
+        specifier: workspace:*
+        version: link:../schema
+      '@tf/templates':
+        specifier: workspace:*
+        version: link:../templates
+      '@tf/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      vitest:
+        specifier: ^4.1.5
+        version: 4.1.12(vite@8.3.5)
+
   packages/renderer:
     dependencies:
       '@tf/schema':
