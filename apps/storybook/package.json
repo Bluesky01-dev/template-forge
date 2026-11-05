@@ -1,0 +1,32 @@
+{
+  "name": "@tf/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006 --no-open",
+    "build": "storybook build -o storybook-static",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tf/renderer": "workspace:*",
+    "@tf/schema": "workspace:*",
+    "@tf/sections": "workspace:*",
+    "@tf/templates": "workspace:*",
+    "@tf/tokens": "workspace:*",
+    "@tf/ui": "workspace:*",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^10.6.5",
+    "@tailwindcss/vite": "^4.3.4",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "storybook": "^10.6.5",
+    "tailwindcss": "^4.3.4",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5"
+  }
+}
