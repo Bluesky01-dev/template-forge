@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "@tf/ui/styles.css";
+
+/* Scan the workspace packages so section/atom classes are generated. */
+@source "../../../packages";
+
+html,
+body {
+  margin: 0;
+}

@@ -4,4 +4,5 @@ export * from "./atoms/typography";
 export * from "./atoms/badge";
 export * from "./atoms/layout";
 export * from "./atoms/media";
+export * from "./atoms/brand-mark";
 export * from "./molecules";

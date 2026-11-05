@@ -30,6 +30,10 @@ const abs = (href: string | undefined, base: string) => {
   }
 };
 
+/** Section titles that are not services ("Our services", "Reviews", "FAQ"…). */
+const GENERIC_HEADING =
+  /^(our |my |the )?(services?|what we do|about( us)?|reviews?|testimonials?|faqs?|frequently asked questions|contact( us)?|get in touch|pricing|plans|our (work|team|clients)|gallery|blog|news|why (choose )?us|how it works|features)[\s.!:?]*$|what (our |people |customers |clients )?(customers |clients )?say|reviews from/i;
+
 const text = (el: HTMLElement | null | undefined) => el?.textContent.replace(/\s+/g, " ").trim() || undefined;
 
 function pickLogo(root: HTMLElement, base: string): string | undefined {
@@ -94,10 +98,14 @@ export function analyzeSite(snap: SiteSnapshot): BrandAnalysis {
     root.querySelector('meta[property="og:description"]')?.getAttribute("content") ??
     undefined;
   const h1 = text(root.querySelector("h1"));
-  const subheads = root
-    .querySelectorAll("h2, h3")
-    .map((h) => text(h))
-    .filter((t): t is string => !!t && t.length > 3 && t.length < 80);
+  const heads = (sel: string) =>
+    root
+      .querySelectorAll(sel)
+      .map((h) => text(h))
+      .filter((t): t is string => !!t && t.length > 3 && t.length < 80 && !GENERIC_HEADING.test(t));
+  // Item-level headings (h3/h4) describe services best; fall back to h2s.
+  const h3s = heads("h3, h4");
+  const subheads = h3s.length >= 3 ? h3s : [...h3s, ...heads("h2")];
   const bodyText = text(root.querySelector("body")) ?? "";
   const corpus = [title, description, h1, ...subheads, bodyText.slice(0, 20000)].filter(Boolean).join(" \n ");
   const { industry } = classifyIndustry(corpus);

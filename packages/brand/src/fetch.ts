@@ -6,6 +6,8 @@ export interface FetchOptions {
   maxStylesheets?: number;
   maxBytes?: number;
   timeoutMs?: number;
+  /** DEV ONLY: allow localhost/private hosts (for testing against a local fixture site). */
+  allowPrivate?: boolean;
 }
 
 const UA = "Mozilla/5.0 (compatible; TemplateForgeBot/1.0; +https://github.com/Bluesky01-dev/template-forge)";
@@ -22,9 +24,10 @@ async function getText(url: string, f: typeof fetch, maxBytes: number, timeoutMs
 }
 
 /** Only allow http(s) to public hosts (basic SSRF guard for a server-side fetcher). */
-export function assertPublicUrl(raw: string): URL {
+export function assertPublicUrl(raw: string, allowPrivate = false): URL {
   const u = new URL(raw);
   if (!/^https?:$/.test(u.protocol)) throw new Error("Only http(s) URLs are allowed");
+  if (allowPrivate) return u;
   const h = u.hostname.toLowerCase();
   if (
     h === "localhost" ||
@@ -45,7 +48,7 @@ export async function fetchSite(url: string, opts: FetchOptions = {}): Promise<S
   const f = opts.fetcher ?? fetch;
   const maxBytes = opts.maxBytes ?? 1_500_000;
   const timeoutMs = opts.timeoutMs ?? 12_000;
-  const u = assertPublicUrl(url);
+  const u = assertPublicUrl(url, opts.allowPrivate);
   const html = await getText(u.toString(), f, maxBytes, timeoutMs);
   const root = parseHtml(html);
   const hrefs = root

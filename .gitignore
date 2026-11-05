@@ -9,3 +9,5 @@ dist
 .env*
 !.env.example
 .dev.vars
+*.tsbuildinfo
+next-env.d.ts

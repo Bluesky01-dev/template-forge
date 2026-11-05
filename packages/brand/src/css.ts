@@ -41,10 +41,11 @@ const PROP_WEIGHT: Record<string, number> = {
   "box-shadow": 0.2,
 };
 
+// Order matters: specific roles win over generic "brand"/"theme" (e.g. --brand-accent is an accent).
 const ROLE_FROM_VAR: Array<[RegExp, ColorHit["hint"]]> = [
-  [/(primary|brand|main|theme)/, "primary"],
   [/secondary/, "secondary"],
   [/(accent|highlight|cta)/, "accent"],
+  [/(primary|brand|main|theme)/, "primary"],
   [/(^|-)(bg|background|surface|canvas)(-|$)/, "background"],
   [/(^|-)(text|fg|foreground|ink|body)(-|$)/, "text"],
 ];

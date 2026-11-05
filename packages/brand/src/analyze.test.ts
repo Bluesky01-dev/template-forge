@@ -57,6 +57,8 @@ describe("analyzeSite", () => {
     expect(a.profile.logo).toBe("https://sparkyco.example/img/sparky-logo.svg");
     expect(a.profile.content.needs).toEqual(expect.arrayContaining(["testimonials", "booking", "contact"]));
     expect(a.profile.content.services).toContain("Switchboard upgrades");
+    expect(a.profile.content.services).not.toContain("Our services");
+    expect(a.profile.content.services).not.toContain("What our customers say");
   });
 
   it("extracts a dark agency brand", () => {
@@ -81,6 +83,18 @@ describe("analyzeSite", () => {
     const a = analyzeSite({ url: "https://empty.example/", html: "<html></html>", css: [] });
     expect(a.input.primary).toMatch(/^#/);
     expect(a.profile.colors).toEqual([]);
+  });
+});
+
+describe("css variable roles", () => {
+  it("treats --brand-accent as accent, not primary", () => {
+    const a = analyzeSite({
+      url: "https://x.example/",
+      html: "<html></html>",
+      css: [":root{--brand-primary:#0b5fff;--brand-accent:#ffb800} .nav{background:#0a1f44}"],
+    });
+    expect(a.input.primary).toBe("#0b5fff");
+    expect(a.input.accent).toBe("#ffb800");
   });
 });
 

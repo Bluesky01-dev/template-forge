@@ -1,4 +1,4 @@
-import { Container, LinkButton, SectionShell, cn } from "@tf/ui";
+import { BrandMark, Container, LinkButton, SectionShell, cn } from "@tf/ui";
 import type { SectionComponentProps } from "./types";
 
 export function Navbar({ section, vars }: SectionComponentProps<"navbar">) {
@@ -7,8 +7,8 @@ export function Navbar({ section, vars }: SectionComponentProps<"navbar">) {
   return (
     <SectionShell spacing="none" vars={vars} className="border-b border-border" data-section={section.id}>
       <Container className={cn("flex h-16 items-center gap-6", centered ? "justify-between md:grid md:grid-cols-3" : "justify-between")}>
-        <a href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-          {brand.logo ? <img src={brand.logo.src} alt={brand.logo.alt || brand.name} className="h-7 w-auto" /> : brand.name}
+        <a href="#" className="flex items-center gap-2">
+          <BrandMark name={brand.name} logo={brand.logo} />
         </a>
         <nav aria-label="Main" className={cn("hidden items-center gap-6 text-sm md:flex", centered && "justify-center")}>
           {links.map((l) => (

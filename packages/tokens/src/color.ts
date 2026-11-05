@@ -1,4 +1,4 @@
-import { converter, formatCss, parse, wcagContrast, clampChroma, type Oklch } from "culori";
+import { converter, formatCss, formatHex, parse, wcagContrast, clampChroma, type Oklch } from "culori";
 
 const toOklch = converter("oklch");
 
@@ -74,4 +74,9 @@ export function filledPair(fill: Oklch, min = 4.5): { fill: Oklch; text: Oklch }
     }
   }
   return { fill, text: readableOn(fill, min) };
+}
+
+/** Any CSS color -> #rrggbb (for <input type="color">). */
+export function toHex(color: string): string {
+  return formatHex(oklch(color)) ?? "#000000";
 }
